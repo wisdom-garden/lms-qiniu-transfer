@@ -4,5 +4,6 @@ VERSION=$(git rev-parse HEAD)
 
 cd "$(dirname $0)"
 
-git commit -am "${VERSION}"
+git add .
+git commit -m "${VERSION}"
 git push

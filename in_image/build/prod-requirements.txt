@@ -1,0 +1,4 @@
+peewee==2.8.5
+pymysql==0.7.9
+qiniu==7.0.2
+python-dateutil==2.2
