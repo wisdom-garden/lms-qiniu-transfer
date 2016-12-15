@@ -1,5 +1,8 @@
 import sys
+from datetime import datetime
 from os import path, environ
+
+from src.constants import DATETIME_FORMAT
 
 sys.path.append(path.dirname(path.dirname(__file__)))
 
@@ -19,6 +22,8 @@ def _load_config():
 
 def run():
     check_list = CheckList.build().output_dates()
+    print('{}: check list = {}'.format(datetime.now().strftime(DATETIME_FORMAT), check_list))
+
     for date in check_list:
         file_list = LogFetcher(config).fetch(date)
         log_entries = []
