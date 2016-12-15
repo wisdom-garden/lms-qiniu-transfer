@@ -11,7 +11,7 @@ from peewee import fn
 from qiniu import Auth
 from qiniu.http import ResponseInfo
 
-from src.constants import DATE_FORMAT
+from src.constants import DATE_FORMAT, DATETIME_FORMAT
 from src.models import TransferRecord, Org, TransferStatement
 
 
@@ -81,7 +81,8 @@ class QiniuLogApi:
                 and response.json().get('data').get(domain) is not None:
             log_files = response.json().get('data').get(domain)
         else:
-            print('log date = "{}" | '.format(day), ResponseInfo(response))
+            print('{}: log file day = "{}" | '.format(datetime.now().strftime(DATETIME_FORMAT), day),
+                  ResponseInfo(response))
 
         return log_files
 
