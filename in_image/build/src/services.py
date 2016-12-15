@@ -188,4 +188,4 @@ class OrgTransferStatementCalculator(object):
             TransferRecord.date >= current_month_start, TransferRecord.date < next_month_start,
             TransferRecord.org_id == org_id).get()
 
-        return result.total_size
+        return 0 if result.total_size is None else result.total_size

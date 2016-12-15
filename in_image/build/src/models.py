@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from peewee import Model, IntegerField, DateField, BigIntegerField, CharField, TimestampField
+from peewee import Model, IntegerField, DateField, BigIntegerField, CharField, DateTimeField
 
 from src.database import db
 
@@ -16,7 +16,7 @@ class TransferRecord(BaseModel):
     org_id = IntegerField()
     date = DateField()
     size = BigIntegerField()
-    created_at = TimestampField()
+    created_at = DateTimeField()
 
     class Meta:
         db_table = 'transfer_record'
