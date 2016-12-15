@@ -6,4 +6,4 @@ cd "$(dirname $0)"
 
 git add .
 git commit -m "from lms-qiniu-transfer.git: ${VERSION}"
-git push
+git push origin master
