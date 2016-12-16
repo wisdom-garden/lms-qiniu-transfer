@@ -2,10 +2,9 @@ import sys
 from datetime import datetime
 from os import path, environ
 
-from src.constants import DATETIME_FORMAT
-
 sys.path.append(path.dirname(path.dirname(__file__)))
 
+from src.constants import DATETIME_FORMAT
 from src.config import Config
 from src.database import init_db
 from src.services import CheckList, LogFetcher, LogParser, TransferAccumulator, OrgTransferStatementCalculator
@@ -45,6 +44,5 @@ def init_config_and_db():
 
 if __name__ == '__main__':
     # command line args
-
     config = init_config_and_db()
     run()
